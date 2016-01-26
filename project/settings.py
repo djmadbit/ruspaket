@@ -124,3 +124,7 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'web-ruspaket@yandex.ru'
 
 EMAIL_ADMINS=['djmadbit@gmail.com']
+
+
+try:
+    import production_settings.py
