@@ -2,6 +2,14 @@
 
 {% load thumbnail staticfiles %}
 
+{% block header_text %}
+	{% if config.HEADER_TEXT != '' %}
+		{{config.HEADER_TEXT}}
+	{% else %}
+		{{item.title}}
+	{% endif %}
+{% endblock header_text %}
+
 {% block content %}
 	<section id="about">
 		<div class="container">
@@ -9,19 +17,19 @@
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="left show-product">
 					<div class="image">
-						{% thumbnail item.image "400x400" as im %}
+						{% thumbnail item.image "300x300"  crop="center" as im  %}
 						    <img src="{{ im.url }}" class="img-responsive">
 						{% endthumbnail %}
 					</div>
 					<p>Позвоните нам:</p>
-					<div class="h1">+7(495) 778 19 99</div>
+					<div class="h1">{{config.PHONE}}</div>
 				</div>
 				<div class="clear"></div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="top-block show-product">
 					<div class="h3">{{item.title}}</div>
-					<p class="price">Цена: <span class="h2">{{item.price_from}}</span> денег</p>
+					<p class="price">Цена: от <span class="h2">{{item.price_from}}</span> до <span class="h2">{{item.price_to}}</span> денег</p>
 					<p>Заказ от {{item.price_from}} рублей</p>
 					<p class="description">Минимальная партия от {{item.min_count}} рулончика.</p>
 				</div>
@@ -62,7 +70,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6 pp">
 					<div class="product productt">
 						<div class="image">
-							{% thumbnail item.image "250x250" as im %}
+							{% thumbnail item.image "250x250" crop="center" as im %}
 							    <img src="{{ im.url }}" class="img-responsive">
 							{% endthumbnail %}
 						</div>

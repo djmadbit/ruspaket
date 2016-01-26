@@ -93,9 +93,9 @@ class Item(models.Model):
 		verbose_name_plural=u'Товары'
 
 class Order(models.Model):
-	item=models.ForeignKey(
-		Item,
-		verbose_name=u'Товар',
+	page=models.CharField(
+		verbose_name=u'Страница',
+		max_length=1024,
 	)
 	name=models.CharField(
 		verbose_name=u'ИМЯ',

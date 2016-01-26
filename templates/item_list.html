@@ -2,17 +2,26 @@
 
 {% load thumbnail staticfiles %}
 
-{% block content %}
+{% block header_text %}
+	{% if config.HEADER_TEXT != '' %}
+		{{config.HEADER_TEXT}}
+	{% else %}
+		{{category.title}}
+	{% endif %}
+{% endblock header_text %}
 
+{% block content %}
 	<section id="products">
 		<div class="container">
-			<h3 class="text-center">Категория {{item.category.title}}</h3>
+			<div class="col-md-12">
+				<div class="main">Категория "{{category.title}}":</div>
+			</div>
 			<br><br>
 			{% for item in items %}
 				<div class="col-lg-4 col-md-4 col-sm-6 pp">
 					<div class="product productt">
 						<div class="image">
-							{% thumbnail item.image "250x250" as im %}
+							{% thumbnail item.image "250x250" crop="center" as im %}
 							    <img src="{{ im.url }}" class="img-responsive">
 							{% endthumbnail %}
 						</div>

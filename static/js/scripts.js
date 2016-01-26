@@ -15,11 +15,9 @@ $(document).ready(function() {
 	$('.button').click(function() {
 		$('body').find('form:not(this)').children('label').removeClass('red'); //удаление всех сообщение об ошибке(валидатора)
 		var page = $('input[name="page"]').val().match(/(?:\/)(.{1})(?:\/.*)$/i); //берем ссылку на страницу из поля input[name='page']
-		if(page == null) {
-			var url = windows.location.href+'/order/'; //если целевая
-		} else {
-			var url = windows.location.href+'/order/'; //если /a/ или /b/
-		}
+
+		var url ='/create_order/'; //если /a/ или /b/
+
 		var answer = checkForm($(this).parent().get(0)); //ответ от валидатора
 		if(answer != false)
 		{
@@ -37,12 +35,14 @@ $(document).ready(function() {
 				type: "POST",
 				url: url,
 				dataType: "json",
-				data: "type="+type+"&name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref //добавить параметр +"&имя"+имя_переменной
-			}).always(function() {
-			popup_out();
-            if(page == null) {
-                popup('spasibo');
-                }
+				data: "type="+type+"&name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&page="+page, //добавить параметр +"&имя"+имя_переменной
+				success:function(response)
+				{
+					popup_out();
+	            	if(page == null) {
+	               		popup('spasibo');
+	                }
+				}
 			});
 		}
 	});
@@ -73,7 +73,7 @@ $(document).ready(function() {
 				}
 			});
 		});
-		$('head').append('<link rel="stylesheet" href="css/animation.css" />'); //подключение файла animation.css если не мобильник
+		$('head').append('<link rel="stylesheet" href="/static/css/animation.css" />'); //подключение файла animation.css если не мобильник
 	}
 
 	//script dlya vibora tovara
