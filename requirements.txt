@@ -3,8 +3,10 @@ Pillow==3.1.0
 argparse==1.2.1
 django-autofixture==0.11.0
 django-constance==1.1.1
+django-debug-toolbar==1.4
 django-picklefield==0.3.2
 django-tinymce==2.2.0
 redis==2.10.5
 sorl-thumbnail==12.3
+sqlparse==0.1.18
 wsgiref==0.1.2
