@@ -17,21 +17,23 @@ class ItemsListView(ListView):
 	model=Item
 	template_name="item_list.html"
 	context_object_name="items"
+	slug_field = 'utm'
 
 	def get_context_data(self,**kwargs):
 		context=super(ItemsListView,self).get_context_data(**kwargs)
-		category_id=self.kwargs['pk']
-		context['category']=Category.objects.get(pk=category_id)
+		category_utm=self.kwargs['slug']
+		context['category']=Category.objects.get(utm=category_utm)
 		return context
 
 	def get_queryset(self):
-		category=self.kwargs['pk']
-		return Item.objects.filter(category_id=category)	
+		utm=self.kwargs['slug']
+		return Item.objects.filter(category__utm=utm).select_related()	
 
 class ItemDetailView(DetailView):
 	model=Item
 	context_object_name='item'
 	template_name='item.html'
+	slug_field = 'utm'
 
 	def get_context_data(self,**kwargs):
 		context=super(ItemDetailView,self).get_context_data(**kwargs)
@@ -41,13 +43,16 @@ class ItemDetailView(DetailView):
 
 @csrf_exempt
 def CreateOrderView(request):
-	print(request.POST)
-	name=request.POST.get('name')
-	phone=request.POST.get('phone')
-	page=request.POST.get('page')
-	Order.objects.create(name=name,phone=phone,page=page)
-	
-	msg=u'Новая заявка на сайте.\nИмя - '+name+u'\nТелефон: '+phone+u'\nСтраница: '+page
-	send_mail(u'Новая заявка', msg, settings.DEFAULT_FROM_EMAIL, settings.EMAIL_ADMINS, fail_silently=False)
-	return HttpResponse('OK')
-	
+	try:
+		name=request.POST.get('name')
+		phone=request.POST.get('phone')
+		page=request.POST.get('page')
+		desc=request.POST.get('desc')
+
+		Order.objects.create(name=name,phone=phone,page=page,desc=desc)
+		
+		msg=u'Новая заявка на сайте.\nИмя: '+name+u'\nТелефон: '+phone+u'\n'+desc
+		send_mail(u'Новая заявка', msg, settings.DEFAULT_FROM_EMAIL, settings.EMAIL_ADMINS, fail_silently=False)
+		return JsonResponse({'status':'success'})
+	except:
+		return JsonResponse({'status':'fail'}) 	

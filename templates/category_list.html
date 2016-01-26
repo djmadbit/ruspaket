@@ -17,7 +17,7 @@
 							    <img src="{{ im.url }}" class="img-responsive" alt="{{category.title}}">
 							{% endthumbnail %}
 						</div>
-						<div class="h3"><a href="{% url 'item_list' category.id %}" class="category-url">{{category}}</a></div>
+						<div class="h3"><a href="{{category.get_absolute_url}}" class="category-url">{{category}}</a></div>
 						<p class="description">{{ category.short_about|safe }}</p>
 					</div>
 				</div>

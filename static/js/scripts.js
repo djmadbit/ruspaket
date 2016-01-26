@@ -14,7 +14,7 @@ $(document).ready(function() {
 	
 	$('.button').click(function() {
 		$('body').find('form:not(this)').children('label').removeClass('red'); //удаление всех сообщение об ошибке(валидатора)
-		var page = $('input[name="page"]').val().match(/(?:\/)(.{1})(?:\/.*)$/i); //берем ссылку на страницу из поля input[name='page']
+		var page = $('input[name="page"]').val(); //берем ссылку на страницу из поля input[name='page']
 
 		var url ='/create_order/'; //если /a/ или /b/
 
@@ -30,18 +30,20 @@ $(document).ready(function() {
 				submit =   $('input[name='+sbt+']', $form).val(),
 				type =   $('input[name="type"]', $form).val();
 			var ref =      $('input[name="referer"]').val();
+			var desc =      $('input[name="desc"]').val();
 			var formname = $('input[name="formname"]',$form).val();
 			$.ajax({
 				type: "POST",
 				url: url,
 				dataType: "json",
-				data: "type="+type+"&name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&page="+page, //добавить параметр +"&имя"+имя_переменной
+				data: "type="+type+"&name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&desc="+desc+"&page="+page, //добавить параметр +"&имя"+имя_переменной
 				success:function(response)
 				{
-					popup_out();
-	            	if(page == null) {
-	               		popup('spasibo');
-	                }
+					if(response.status=='success'){
+						popup_out();
+		            	popup('spasibo');
+					}
+					else alert('Что-то полшло не так, попробуйте еще раз...')
 				}
 			});
 		}

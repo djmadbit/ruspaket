@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
+from django.core.urlresolvers import reverse
 
 from tinymce.models import HTMLField
 
@@ -9,9 +10,10 @@ class Category(models.Model):
 		verbose_name=u'Название',
 		max_length=255,
 	)
-	utm=models.CharField(
+	utm=models.SlugField(
 		verbose_name=u'UTM метка',
 		max_length=255,
+		unique=True,
 	)
 	price_from=models.IntegerField(
 		verbose_name=u'Цена от',
@@ -41,6 +43,10 @@ class Category(models.Model):
 
 	def __str__(self):
 		return (self.title).encode('utf-8')
+
+	@models.permalink
+	def get_absolute_url(self):
+		return ('item_list', (), {'slug': self.utm})
 
 	class Meta:
 		verbose_name=u'Категория'
@@ -55,9 +61,10 @@ class Item(models.Model):
 		verbose_name=u'Название',
 		max_length=255,
 	)
-	utm=models.CharField(
+	utm=models.SlugField(
 		verbose_name=u'UTM метка',
 		max_length=255,
+		unique=True,
 	)
 	price_from=models.IntegerField(
 		verbose_name=u'Цена от',
@@ -88,6 +95,10 @@ class Item(models.Model):
 	def __str__(self):
 		return (self.title).encode('utf-8')
 
+	@models.permalink
+	def get_absolute_url(self):
+		return ('item_detail', (), {'slug': self.utm})
+
 	class Meta:
 		verbose_name=u'Товар'
 		verbose_name_plural=u'Товары'
@@ -97,6 +108,10 @@ class Order(models.Model):
 		verbose_name=u'Страница',
 		max_length=1024,
 	)
+	desc=models.CharField(
+		verbose_name=u'Описание страницы',
+		max_length=1024,
+	)
 	name=models.CharField(
 		verbose_name=u'ИМЯ',
 		max_length=1024,
@@ -104,6 +119,10 @@ class Order(models.Model):
 	phone=models.CharField(
 		verbose_name=u'Телефон',
 		max_length=255,
+	)
+	date_created=models.DateTimeField(
+		verbose_name=u'Дата создания',
+		auto_now_add=True,
 	)
 
 	def __str__(self):

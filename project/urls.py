@@ -17,3 +17,7 @@ if settings.DEBUG:
 		url(r'^static/(?P<path>.*)$', views.serve),
 	]	
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+	import debug_toolbar
+	urlpatterns += patterns('',
+		url(r'^__debug__/', include(debug_toolbar.urls)),
+	)

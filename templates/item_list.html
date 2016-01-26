@@ -2,6 +2,10 @@
 
 {% load thumbnail staticfiles %}
 
+{% block page_title %}
+	Категория {{category.title}}
+{% endblock page_title %}
+
 {% block header_text %}
 	{% if config.HEADER_TEXT != '' %}
 		{{config.HEADER_TEXT}}
@@ -9,6 +13,9 @@
 		{{category.title}}
 	{% endif %}
 {% endblock header_text %}
+
+
+{% block order_desc %}Страница категории: {{category.title}}{% endblock order_desc %}
 
 {% block content %}
 	<section id="products">
@@ -25,7 +32,7 @@
 							    <img src="{{ im.url }}" class="img-responsive">
 							{% endthumbnail %}
 						</div>
-						<div class="h3"><a href="{% url 'item_detail' item.id %}">{{item.title}}</a></div>
+						<div class="h3"><a href="{{item.get_absolute_url}}">{{item.title}}</a></div>
 						<p class="description">{{ item.short_about|safe }}</p>
 						<p class="price">Цена: <span class="h2">{{item.price_from}}</span> денег</p>
 					</div>
