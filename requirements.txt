@@ -8,3 +8,4 @@ django-tinymce==2.2.0
 redis==2.10.5
 sorl-thumbnail==12.3
 wsgiref==0.1.2
+django-debug-toolbar
