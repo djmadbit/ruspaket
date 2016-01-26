@@ -1,0 +1,29 @@
+.animated {
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.block { /* убираем блок перед анимацией */
+	opacity: 0;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@keyframes fadeIn
+{
+0%   {opacity: 0;}
+100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn
+{
+0%   {opacity: 0;}
+100% {opacity: 1;}
+}
+
+.animated.block {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}

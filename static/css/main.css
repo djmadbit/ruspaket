@@ -1,0 +1,559 @@
+@font-face {
+	font-family: 'dindisplaypro italic';
+	src: url(../fonts/pfdindisplaypro-medital.ttf);
+}
+
+@font-face {
+	font-family: 'dindisplaypro regular';
+	src: url(../fonts/pfdindisplaypro-reg.ttf);
+}
+
+@media (min-width: 1200px){
+	.container {
+    	width: 1020px;
+	}
+
+	#about .div{
+		width: 970px;
+	}
+
+	#about .left{
+		width: 430px;
+		min-height: 551px;
+	}
+
+	#about.container{
+		padding-right: 50px;
+	}
+	#about .top-block{
+		height: 300px;
+	}
+	#products .product{
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	#products .productt{
+		margin-left: 0px;
+		margin-right: 30px;
+	}
+
+	#products .producttt{
+		margin-left: 30px;
+		margin-right: 0px;
+	}
+}
+
+header{
+	background: url(../images/header-bg.png);
+	min-height: 250px;
+}
+
+header .image{
+	padding: 30px 10px;
+}
+
+header img{
+	margin: 0 auto;	
+}
+
+header .sidebar{
+	margin: 20px 0;
+	padding: 30px 20px;
+	border-left: 2px solid #27411A;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+header .sidebar .content .span{
+	font-size: 26px;
+	font-weight: normal;
+	font-family: "dindisplaypro italic";
+	color: #BBC96A;
+}
+
+header .sidebar .content .h1{
+	color: #fff;
+	font-size: 36px;
+	font-family: "dindisplaypro regular";
+}
+
+.divider{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	height: 5px;
+	background-color: #fff;
+	box-shadow: 0px 0px 20px #000000;
+}
+
+/***************************************************/
+
+#about{
+	background: url(../images/about-bg.png);
+	padding: 20px 0;
+}
+
+#about .left{
+	background: rgba(0,0,0,0.4);
+	border: 2px solid #fff;
+	padding: 20px;
+	margin-bottom: 20px;
+	height: 545px;
+	width: 100%;
+	font-family: "dindisplaypro regular";
+}
+
+#about .left .image img{
+	margin: 0 auto;
+	width: 95%;
+	height: auto;
+	border: 2px solid #fff;
+}
+
+#about .left p{
+	padding: 15px;
+	font-size: 20px;
+	text-transform: lowercase;
+	color: #D5D8DF;
+	margin-bottom: 0px;
+}
+
+#about .left .h1{
+	padding-left: 15px;
+	text-transform: uppercase;
+	color: #fff;
+	margin: 0;
+}
+
+#about .top-block{
+	padding: 20px;
+	position: relative; 
+	background: rgba(0,0,0,0.4); 
+	border: 2px solid #fff;
+	color: #fff;
+	max-width: 513px;
+}
+
+#about .top-block:after, .top-block:before { 
+	right: 100%; 
+	top: 20%; 
+	border: solid transparent; 
+	content: " "; 
+	height: 0; 
+	width: 0; 
+	position: absolute; 
+	pointer-events: none; 
+}
+
+#about .top-block:after { 
+	border-color: rgba(0,0,0,0); 
+	border-right-color: #204675;
+	border-width: 20px;
+	margin-top: -20px; 
+} 
+	
+#about .top-block:before { 
+	border-color: rgba(0,0,0,0); 
+	border-right-color: #fff; 
+	border-width: 23px; 
+	margin-top: -23px; 
+}
+
+#about .top-block .h3{
+	font-family: "dindisplaypro regular";
+	font-size: 23px;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+
+#about .top-block .h2{
+	color: #fff;
+	font-family: "dindisplaypro regular";
+}
+
+#about .top-block p{
+	padding: 15px;
+	padding-left: 0;
+	font-size: 20px;
+	color: #D5D8DF;
+	font-family: "dindisplaypro regular";
+}
+
+#about .bottom-block{
+	padding: 15px;
+	background: #99C635; 
+	font-family: "dindisplaypro regular";
+	border: 2px solid #fff;
+	color: #7FA534;
+	margin-top: 15px;
+	max-width: 513px;
+}
+
+#about .bottom-block .clear{
+	clear: both;
+}
+
+#about .bottom-block img{
+	margin: 0 auto;
+	margin-top: 50%;
+}
+
+#about .bottom-block label{
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#about .bottom-block .form-control{
+	border-radius: 0;
+	background: url(../images/input-bg.png);
+	background-size: cover;
+	border: none;
+	margin-bottom: 10px;
+	color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#about .bottom-block .button{
+	width: 100%;
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #BC3535;
+	border: 1px solid #fff;
+	transition: all 0.5s ease;
+}
+
+#about .bottom-block .button:hover, #about .bottom-block .button:focus{
+	background-color: #D05B5B;
+}
+
+/***************************************************/
+
+#products{
+	background: url(../images/products-bg.png);
+	padding: 40px 0;
+}
+
+#products .main{
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-family: "dindisplaypro regular";
+	color: #254775;
+	font-size: 25px;
+	font-weight: 700;
+	padding-bottom: 25px;
+}
+
+#products .h3{
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-family: "dindisplaypro regular";
+	color: #254775;
+	font-size: 19px;
+}
+
+#products .pp{
+	padding-left: 15px;
+}
+
+#products .product{
+	background-color: rgba(255,255,255,0.6);
+	padding: 15px;
+	color: #234875;
+	font-size: 16px;
+	margin-bottom: 40px;	
+	font-family: "dindisplaypro regular";
+	cursor: pointer;
+}
+
+#products .product img{
+	border: 2px solid #fff;
+	height: 250px;
+	width: 250px;
+}
+
+/***************************************************/
+
+#partners{
+	background: url(../images/partners-bg.png);
+	padding-top: 35px;
+	padding-bottom: 65px;
+}
+
+#partners .h3{
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-family: "dindisplaypro regular";
+	color: #254775;
+	font-size: 25px;
+	font-weight: 700;
+	padding-bottom: 20px;
+}
+
+#partners .partner{
+	width: 20%;
+	padding-right: 20px;
+	padding-left: 20px;
+	float: left;
+}
+
+#partners .partner img{
+	border: 2px solid #fff;
+}
+
+/***************************************************/
+
+#team{
+	background: url(../images/team-bg.png);
+	padding-top: 40px;	
+	padding-bottom: 55px;
+}
+
+#team .h3{
+	text-decoration: underline;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+	font-family: "dindisplaypro regular";
+	padding-bottom: 20px;
+}
+
+#team .h4{
+	color: #fff;
+	font-size: 24px;
+	font-family: "dindisplaypro regular";
+	font-weight: 700;
+}
+
+#team p{
+	color: #fff;
+	font-family: "dindisplaypro regular";
+	font-size: 20px;
+}
+
+/***************************************************/
+
+#contacts{
+	background: url(../images/contacts-bg.png);
+	padding-top: 40px;	
+	padding-bottom: 40px;
+}
+
+#contacts .karta{
+	max-width: 100%;
+	height: 450px;
+}
+
+#contacts .h3{
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-family: "dindisplaypro regular";
+	color: #fff;
+	font-weight: 700;
+	padding-bottom: 20px;
+}
+
+#contacts p{
+	color: #fff;
+	font-family: "dindisplaypro regular";
+	font-size: 24px;
+}
+
+#contacts .top-block{
+	min-height: 110px;
+	margin-bottom: 45px;
+}
+
+#contacts .h2{
+	color: #fff;
+	font-family: "dindisplaypro regular";
+	text-align: justify;
+	margin: 0;
+}
+
+#contacts .bottom-block{
+	padding: 15px;
+	padding-top: 25px;
+	background: #99C635;
+	font-family: "dindisplaypro regular";
+	border: 2px solid #fff;
+	color: #7FA534;
+	min-height: 285px;
+	max-width: 513px;
+}
+
+#contacts .bottom-block .clear{
+	clear: both;
+}
+
+#contacts .bottom-block img{
+	margin: 0 auto;
+	margin-top: 50%;
+}
+
+#contacts .bottom-block label{
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#contacts .bottom-block .form-control{
+	border-radius: 0;
+	background: url(../images/input-bg.png);
+	background-size: cover;
+	border: none;
+	margin-bottom: 10px;
+	color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#contacts .bottom-block .button{
+	width: 100%;
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #BC3535;
+	border: 1px solid #fff;
+	transition: all 0.5s ease;
+}
+
+#contacts .bottom-block .button:hover, #contacts .bottom-block .button:focus{
+	background-color: #D05B5B;
+}
+
+#contacts .bottom{
+	margin-top: 25px;
+}
+
+#contacts .bottom .h3{
+	text-decoration: underline;
+	text-transform: none;
+	font-family: "dindisplaypro regular";
+	color: #fff;
+	font-weight: 700;
+	padding-bottom: 20px;
+}
+
+/***************************************************/
+
+.dividerr{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	margin-top: -5px;
+	height: 3px;
+	background-color: #fff;
+}
+
+footer{
+	background: url(../images/footer-bg.png);
+	padding: 20px 0;
+	text-align: center;
+}
+
+footer .h2 a{
+	color: #fff;
+	font-family: "dindisplaypro regular";
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+
+footer .h2{
+	margin-bottom: 25px;
+}
+
+@media(max-width: 1268px){
+	#about .left{
+		height: 647px;
+		width: 100%;
+	}
+
+	#about .top-block{
+		width: 100%;
+		height: 350px;
+	}
+
+	#about .bottom-block{
+		width: 100%;
+		height: 282px;
+	}
+}
+
+@media(max-width: 1024px){
+	#about .bottom-block img{
+		margin-top: 2%;
+	}	
+
+	#about .bottom-block .button{
+		font-size: 16px;
+	}
+
+	#contacts .bottom-block img{
+		margin-top: 2%;
+	}
+
+	#contacts .bottom-block .button{
+		font-size: 16px;
+	}
+
+	#contacts .bottom .h2{
+		font-size: 24px;
+	}
+}
+
+@media(max-width: 768px){
+	#about .left{
+		height: auto;
+		width: 100%;
+	}
+
+	#about .top-block{
+		width: 100%;
+		height: auto;
+	}
+
+	#about .bottom-block{
+		width: 100%;
+		height: auto;
+	}
+
+	#about .bottom-block img{
+		margin-top: 0;		
+	}
+
+	#contacts .bottom-block{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0;
+	}
+
+	#contacts .bottom-block img{
+		margin-top: 0;
+	}
+
+	#contacts .bottom .h2, #contacts p{
+		font-size: 18px;
+	}
+
+	#contacts .h2{
+		font-size: 22px;
+	}
+
+	#products .product{
+		margin: 0 auto;
+		margin-bottom: 40px;
+		max-width: 400px;		
+	}
+
+	#contacts .karta{
+		height: 350px;
+		margin-bottom: 25px;
+	}
+}
+
+.clear{
+	clear: both;
+}

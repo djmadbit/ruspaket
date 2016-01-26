@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load thumbnail %}
+
+{% block content %}
+	<section id="products">
+		<div class="container">
+			<h3 class="text-center">Все категории товаров</h3>
+			<br><br>
+			{% for category in categories %}
+				<div class="col-lg-4 col-md-4 col-sm-6 pp">
+					<div class="product productt">
+						<div class="image">
+							{% thumbnail category.image "250x250" as im %}
+							    <img src="{{ im.url }}" class="img-responsive">
+							{% endthumbnail %}
+						</div>
+						<div class="h3"><a href="{% url 'item_list' category.id %}" class="category-url">{{category}}</a></div>
+						<p class="description">{{ category.short_about|safe }}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+	<script>
+		$('.productt').equalHeights();
+	</script>
+{% endblock content %}
+	

@@ -1,0 +1,52 @@
+/**************стили от валидатора*************/
+
+label { /*margin-left: 15px; margin-top: 10px;*/ display:block; /*margin-bottom:10px; */position:relative; }
+label:before, label:after { display:block; opacity:0; position:absolute; visibility:hidden; z-index:2; top: -45px; }
+label:before { content:''; height:0; line-height:0; position:absolute; }
+label:after { /*background-color:#f00;*/ color:#fff; content:attr(data); cursor:pointer; font-size:16px; height:auto;
+background: #E84767;
+background: -moz-linear-gradient(top,  #E84767 0%, #E7385D 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E84767), color-stop(100%,#E7385D));
+background: -webkit-linear-gradient(top,  #E84767 0%,#E7385D 100%);
+background: -o-linear-gradient(top,  #E84767 0%,#E7385D 100%);
+background: -ms-linear-gradient(top,  #E84767 0%,#E7385D 100%);
+background: linear-gradient(to bottom,  #E84767 0%,#E7385D 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E84767', endColorstr='#E7385D',GradientType=0 );
+ }
+label:after { line-height:16px; padding:11px 11px 0; white-space:nowrap; border-radius: 4px; }
+label:after:focus { visibility:hidden; opacity:0; }
+
+label.right:before { z-index: 2; border-top:solid 5px transparent; border-bottom:solid 5px transparent; border-right: 5px solid #E84767; left:101%; top:50%; margin: -5px 0 0 0; width:0px; height: 0px; }
+#prod label.right:before { z-index: 2; border-top:solid 5px transparent; border-bottom:solid 5px transparent; border-right: 5px solid #E84767; left:94%; top:50%; margin: -5px 0 0 0; width:0px; height: 0px; }
+#message_form label.right:before { z-index: 2; border-top:solid 5px transparent; border-bottom:solid 5px transparent; border-right: 5px solid #E84767; left:99%; top:38%; margin: -5px 0 0 0; width:0px; height: 0px; }
+label.right:after { border-left:solid 1px #E84767; left:100%; margin:-16px 0 0 6px; top:50%; }
+#prod label.right:after { border-left:solid 1px #E84767; left:94%; margin:-16px 0 0 5px; top:50%; }
+#message_form label.right:after { border-left:solid 1px #E84767; left:99%; margin:-22px 0 0 5px; top:50%; }
+
+label.left:before { z-index: 2; border-top:solid 5px transparent; border-bottom:solid 5px transparent; border-left: 5px solid #E84767;  right:94%; top:50%; margin: -5px 0 0 0; width:0px; height: 0px; }
+label.left:after { border-right:solid 1px #E84767; right:93%; margin:-16px 7px 0 0; top:50%; }
+
+label.top:before { z-index: 2; border-left:solid 5px transparent; border-right:solid 5px transparent; border-top: 5px solid #E84767; height:0px; width: 0px; left:35%; top:-4px; }
+label.top:after { /*border-bottom:solid 1px #f00;*/ bottom:110%; right:0; }
+#message_form label.top:after { /*border-bottom:solid 1px #f00;*/ bottom:85%; left:115px; }
+
+label.bottom:before { z-index: 2; border-left:solid 5px transparent; border-right:solid 5px transparent; border-bottom: 5px solid #E84767; height:0px; width: 0px; left:50%; bottom:-11px; }
+label.bottom:after { /*border-bottom:solid 1px #f00;*/ top:129%; left:15%; }
+
+
+label.red:before, label.red:after { visibility:visible; opacity:1; }
+
+
+/*************************/
+
+.popup { display:none; position:fixed; top:146px; z-index:999999; width:auto; background:url(../images/popup_bg.png); padding:20px; background:#fff; text-align:center; font-family: 'OpenSansRegular'; }
+.popup .close{ position:absolute; width:9px; height:9px; background:url(../images/close.png); right:10px; top:10px; cursor:pointer; }
+.popup form{ background:#fff; padding:20px; position:relative; }
+.popup form .title{ font-family: 'PFIsotextProBold'; font-size:24px; text-transform:uppercase; letter-spacing:2px; margin:0 0 15px; }
+.popup form .name{ font-size:13px;  margin:0 0 5px; }
+.popup form input[type="text"]{ width:286px; border:2px #606060 solid; height:24px; padding:0 5px; font-family: 'OpenSansRegular'; font-size:13px; margin:0 0 10px; }
+.popup form input[type="text"].w110{ width:96px; }
+.popup form textarea{ width:286px; height:138px; border:2px #606060 solid; font-family: 'OpenSansRegular'; font-size:13px; padding:3px 5px; margin:0 0 10px; }
+.popup form input[type="button"]{ height:52px; background:url(../images/flash.png) no-repeat #ffc502; font-family: 'OpenSansBold'; color:#000; text-transform:uppercase; width:300px; text-decoration:underline; cursor:pointer; }
+.popup form input[type="button"]:hover{ text-decoration:none; }
+.popup_shadow{ background:#000; opacity:0.8; width:100%; height:100%; position:fixed; z-index:1000;}
