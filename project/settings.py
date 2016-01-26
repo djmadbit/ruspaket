@@ -130,6 +130,7 @@ DEFAULT_FROM_EMAIL = 'web-ruspaket@yandex.ru'
 EMAIL_ADMINS=['djmadbit@gmail.com']
 
 
+<<<<<<< HEAD
 ######################################################################
 ######################	 DEBUG		##############################
 ######################################################################
@@ -149,3 +150,8 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.logging.LoggingPanel',
     'debug_toolbar.panels.redirects.RedirectsPanel',
 ]
+
+try:
+    from production_settings import *
+except:
+    pass
