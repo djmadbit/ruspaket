@@ -14,7 +14,9 @@
 					<div class="product productt">
 						<div class="image">
 							{% thumbnail category.image "250x250" crop="center" as im %}
-							    <img src="{{ im.url }}" class="img-responsive" alt="{{category.title}}">
+								<a href="{{category.get_absolute_url}}">
+								    <img src="{{ im.url }}" class="img-responsive" alt="{{category.title}}">
+								</a>
 							{% endthumbnail %}
 						</div>
 						<div class="h3"><a href="{{category.get_absolute_url}}" class="category-url">{{category}}</a></div>

@@ -15,11 +15,11 @@ class Category(models.Model):
 		max_length=255,
 		unique=True,
 	)
-	price_from=models.IntegerField(
+	price_from=models.FloatField(
 		verbose_name=u'Цена от',
 		default=0,
 	)
-	price_to=models.IntegerField(
+	price_to=models.FloatField(
 		verbose_name=u'Цена до',
 		default=0,
 	)
@@ -27,13 +27,13 @@ class Category(models.Model):
 		verbose_name=u'Минимальное количество',
 		default=0,
 	)
-	full_about=HTMLField(
-		verbose_name=u'Полное описание',
+	short_about=HTMLField(
+		verbose_name=u'Краткое описание',
 		default='',
 		blank=True,
 	)
-	short_about=HTMLField(
-		verbose_name=u'Краткое описание',
+	full_about=HTMLField(
+		verbose_name=u'Полное описание',
 		default='',
 		blank=True,
 	)
@@ -66,11 +66,11 @@ class Item(models.Model):
 		max_length=255,
 		unique=True,
 	)
-	price_from=models.IntegerField(
+	price_from=models.FloatField(
 		verbose_name=u'Цена от',
 		default=0,
 	)
-	price_to=models.IntegerField(
+	price_to=models.FloatField(
 		verbose_name=u'Цена до',
 		default=0,
 	)
@@ -78,13 +78,13 @@ class Item(models.Model):
 		verbose_name=u'Минимальное количество',
 		default=0,
 	)
-	full_about=HTMLField(
-		verbose_name=u'Полное описание',
+	short_about=HTMLField(
+		verbose_name=u'Краткое описание',
 		default='',
 		blank=True,
 	)
-	short_about=HTMLField(
-		verbose_name=u'Краткое описание',
+	full_about=HTMLField(
+		verbose_name=u'Полное описание',
 		default='',
 		blank=True,
 	)

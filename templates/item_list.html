@@ -18,6 +18,55 @@
 {% block order_desc %}Страница категории: {{category.title}}{% endblock order_desc %}
 
 {% block content %}
+	<section id="about">
+		<div class="container">
+			<div class="div">
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="left show-product">
+					<div class="image">
+						{% thumbnail category.image "300x300"  crop="center" as im  %}
+						    <img src="{{ im.url }}" class="img-responsive">
+						{% endthumbnail %}
+					</div>
+					<p>Позвоните нам:</p>
+					<div class="h1">{{config.PHONE}}</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="top-block show-product">
+					<div class="h3">{{category.title}}</div>
+					<p class="price">Цена: от <span class="h2">{{category.price_from}}</span> до <span class="h2">{{category.price_to}}</span> денег</p>
+					<p>Заказ от {{category.price_from}} рублей</p>
+					<p class="description">Минимальная партия от {{category.min_count}} рулончика.</p>
+				</div>
+				<div class="col-md-12 bottom-block">
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+						<img src="{% static "images/phone.png" %}" class="img-responsive">
+					</div>
+					<div class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
+						<form action="" method="post" name="question_form">
+							<input type="hidden" name="type" value="callback" />
+							<input type="hidden" name="formname" value="Заказать звонок" />
+							<label>Ваше имя</label>
+							<label class="name top required">
+								<input type="text" name="name" class="input_name form-control">
+							</label>
+							<label>Ваш номер телефона</label>
+							<label class="phone top required">
+								<input type="text" name="phone" class="input_phone form-control">
+							</label>
+							<input name="callback" type="button" class="button btn" value="заказать звонок">
+						</form>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="divider"></div>
 	<section id="products">
 		<div class="container">
 			<div class="col-md-12">
@@ -29,7 +78,9 @@
 					<div class="product productt">
 						<div class="image">
 							{% thumbnail item.image "250x250" crop="center" as im %}
-							    <img src="{{ im.url }}" class="img-responsive">
+							    <a href="{{item.get_absolute_url}}">
+							    	<img src="{{ im.url }}" class="img-responsive" alt="{{item.title}}">
+							    </a>
 							{% endthumbnail %}
 						</div>
 						<div class="h3"><a href="{{item.get_absolute_url}}">{{item.title}}</a></div>

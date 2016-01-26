@@ -77,7 +77,9 @@
 					<div class="product productt">
 						<div class="image">
 							{% thumbnail item.image "250x250" crop="center" as im %}
-							    <img src="{{ im.url }}" class="img-responsive">
+							    <a href="{{item.get_absolute_url}}">
+							    	<img src="{{ im.url }}" class="img-responsive" alt="{{item.title}}">
+							    </a>
 							{% endthumbnail %}
 						</div>
 						<div class="h3"><a href="{{item.get_absolute_url}}">{{item.title}}</a></div>
