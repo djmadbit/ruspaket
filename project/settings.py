@@ -127,4 +127,6 @@ EMAIL_ADMINS=['djmadbit@gmail.com']
 
 
 try:
-    import production_settings.py
+    from production_settings import *
+except:
+    pass
