@@ -115,19 +115,15 @@ CONSTANCE_CONFIG = {
 
 	'PHONE': ('+7(495) 778 19 99,', u'Телефон'),
 	'REQUISITES': ('Инн 5027200091 / кпп 502701001 / огрн 1135027004771', u'Реквизиты'),
+
+	'EMAIL_ADMIN': ('djmadbit@gmail', u'Email куда будут приходить заявки'),
+	'EMAIL_FROM': ('djmadbit@gmail', u'Email откуда будут уходить заявки'),
+	'EMAIL_PASSWORD': ('showmeyourskill', u'Пароль'),
+	'EMAIL_PORT': ('587', u'Порт'),
+	'EMAIL_SMTP': ('smtp.gmail.com', u'SMTP сервер'),
+	
 }
 
-######################################################################
-######################	 EMAIL		##############################
-######################################################################
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'web-ruspaket@yandex.ru'
-EMAIL_HOST_PASSWORD = 'bullet01'
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'web-ruspaket@yandex.ru'
-
-EMAIL_ADMINS=['djmadbit@gmail.com']
 
 
 ######################################################################

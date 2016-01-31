@@ -36,9 +36,13 @@
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="top-block show-product">
 					<div class="h3">{{category.title}}</div>
-					<p class="price">Цена: от <span class="h2">{{category.price_from}}</span> до <span class="h2">{{category.price_to}}</span> денег</p>
-					<p>Заказ от {{category.price_from}} рублей</p>
-					<p class="description">Минимальная партия от {{category.min_count}} рулончика.</p>
+					<p class="price">Цена: от <span class="h2">{{category.price_from}}</span> до <span class="h2">{{category.price_to}}</span> руб.</p>
+					{% if category.min_order and category.min_order != '' %}
+						<p>Заказ {{category.min_order}}</p>
+					{% endif %}
+					{% if category.min_count and category.min_count != '' %}
+						<p class="description">Минимальная партия {{category.min_count}}</p>
+					{% endif %}
 				</div>
 				<div class="col-md-12 bottom-block">
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">

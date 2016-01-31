@@ -23,9 +23,17 @@ class Category(models.Model):
 		verbose_name=u'Цена до',
 		default=0,
 	)
-	min_count=models.IntegerField(
+	min_count=models.CharField(
 		verbose_name=u'Минимальное количество',
-		default=0,
+		default='',
+		max_length=255,
+		blank=True,
+	)
+	min_order=models.CharField(
+		verbose_name=u'Минимальный заказ',
+		default='',
+		max_length=255,
+		blank=True,
 	)
 	short_about=HTMLField(
 		verbose_name=u'Краткое описание',
@@ -74,9 +82,17 @@ class Item(models.Model):
 		verbose_name=u'Цена до',
 		default=0,
 	)
-	min_count=models.IntegerField(
+	min_count=models.CharField(
 		verbose_name=u'Минимальное количество',
-		default=0,
+		default='',
+		max_length=255,
+		blank=True,
+	)
+	min_order=models.CharField(
+		verbose_name=u'Минимальный заказ',
+		default='',
+		max_length=255,
+		blank=True,
 	)
 	short_about=HTMLField(
 		verbose_name=u'Краткое описание',

@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView
-from django.core.mail import send_mail
+from django.core.mail import send_mail,get_connection
+from django.core.mail.backends.smtp import EmailBackend
 from django.conf import settings 
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse,JsonResponse
-
+from constance import config
 from .models import Item,Category,Order
 
 class CategoriesView(ListView):
@@ -51,8 +52,14 @@ def CreateOrderView(request):
 
 		Order.objects.create(name=name,phone=phone,page=page,desc=desc)
 		
+		connection= get_connection(host=str(config.EMAIL_SMTP), 
+                                port=str(config.EMAIL_PORT), 
+                                username=config.EMAIL_FROM, 
+                                password=config.EMAIL_PASSWORD, 
+                                use_tls=True) 
+
 		msg=u'Новая заявка на сайте.\nИмя: '+name+u'\nТелефон: '+phone+u'\n'+desc
-		send_mail(u'Новая заявка', msg, settings.DEFAULT_FROM_EMAIL, settings.EMAIL_ADMINS, fail_silently=False)
+		send_mail(u'Новая заявка', msg, config.EMAIL_FROM, [config.EMAIL_ADMIN], connection=connection)
 		return JsonResponse({'status':'success'})
 	except:
 		return JsonResponse({'status':'fail'}) 	
