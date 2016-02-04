@@ -42,7 +42,7 @@
 					{% if item.min_count and item.min_count != '' %}
 						<p class="description">Минимальная партия: {{item.min_count}}</p>
 					{% endif %}
-					
+					{{item.full_about|safe}}					
 				</div>
 				<div class="col-md-12 bottom-block">
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
@@ -89,7 +89,7 @@
 						</div>
 						<div class="h3"><a href="{{item.get_absolute_url}}">{{item.title}}</a></div>
 						<p class="description">{{ item.short_about|safe }}</p>
-						<p class="price">Цена: <span class="h2">{{item.price_from}}</span> денег</p>
+						<p class="price">Цена: от <span class="h2">{{item.price_from|floatformat:"-2"}}</span> до <span class="h2">{{item.price_to|floatformat:"-2"}}</span> руб.</p>
 					</div>
 				</div>
 			{% endfor %}
