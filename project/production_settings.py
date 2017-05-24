@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
-#MEDIA_ROOT = "/var/Projects/ruspaket_media/"
-STATIC_ROOT = "/var/Projects/ruspaket_static/"
+MEDIA_ROOT = "/var/www/ruspaket/media/"
+STATIC_ROOT = "/var/www/ruspaket/static/"
