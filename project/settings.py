@@ -108,6 +108,11 @@ TEMPLATES = [
 	},
 ]
 
+CONSTANCE_ADDITIONAL_FIELDS = {
+    'file_field': ['django.forms.FileField', {}]
+}
+
+    
 CONSTANCE_CONFIG = {
 	'HEADER_TEXT': ('', u'Заголовок в топ-меню'),
 	'ADDRESS1': ('г. Люберцы,', u'Адрес(строка 1)'),
@@ -116,11 +121,12 @@ CONSTANCE_CONFIG = {
 	'PHONE': ('+7(495) 778 19 99,', u'Телефон'),
 	'REQUISITES': ('Инн 5027200091 / кпп 502701001 / огрн 1135027004771', u'Реквизиты'),
 
-	'EMAIL_ADMIN': ('djmadbit@gmail', u'Email куда будут приходить заявки'),
-	'EMAIL_FROM': ('djmadbit@gmail', u'Email откуда будут уходить заявки'),
-	'EMAIL_PASSWORD': ('showmeyourskill', u'Пароль'),
+	'EMAIL_ADMIN': ('*****', u'Email куда будут приходить заявки'),
+	'EMAIL_FROM': ('*****', u'Email откуда будут уходить заявки'),
+	'EMAIL_PASSWORD': ('*****', u'Пароль'),
 	'EMAIL_PORT': ('587', u'Порт'),
 	'EMAIL_SMTP': ('smtp.gmail.com', u'SMTP сервер'),
+    'PRICE_LIST': ('price_list.csv', u'Ссылка на прайс лист', 'file_field',),
 	
 }
 
