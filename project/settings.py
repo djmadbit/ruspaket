@@ -112,6 +112,7 @@ CONSTANCE_ADDITIONAL_FIELDS = {
     'file_field': ['django.forms.FileField', {}]
 }
 
+
     
 CONSTANCE_CONFIG = {
 	'HEADER_TEXT': ('', u'Заголовок в топ-меню'),
