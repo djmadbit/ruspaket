@@ -18,10 +18,14 @@ class Category(models.Model):
 	price_from=models.FloatField(
 		verbose_name=u'Цена от',
 		default=0,
+		blank=True,
+		null=True,
 	)
 	price_to=models.FloatField(
 		verbose_name=u'Цена до',
 		default=0,
+		blank=True,
+		null=True,
 	)
 	min_count=models.CharField(
 		verbose_name=u'Минимальное количество',
@@ -77,10 +81,14 @@ class Item(models.Model):
 	price_from=models.FloatField(
 		verbose_name=u'Цена от',
 		default=0,
+		blank=True,
+		null=True,
 	)
 	price_to=models.FloatField(
 		verbose_name=u'Цена до',
 		default=0,
+		blank=True,
+		null=True,
 	)
 	min_count=models.CharField(
 		verbose_name=u'Минимальное количество',

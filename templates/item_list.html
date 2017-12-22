@@ -36,7 +36,15 @@
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="top-block show-product">
 					<div class="h3">{{category.title}}</div>
-					<p class="price">Цена: от <span class="h2">{{category.price_from|floatformat:"-2" }}</span> до <span class="h2">{{category.price_to|floatformat:"-2"}}</span> руб.</p>
+					{% if category.price_from or category.price_to %}
+					    <p class="price">Цена: 
+    					    {% if category.price_from %}
+    					        от <span class="h2">{{category.price_from|floatformat:"-2"}}</span> 
+                            {% endif %}
+    					    {% if category.price_to %}                            
+                                до <span class="h2">{{category.price_to|floatformat:"-2"}}</span> руб.</p>
+                            {% endif %}
+                    {% endif %}
 					{% if category.min_order and category.min_order != '' %}
 						<p>Минимальный заказ: {{category.min_order}}</p>
 					{% endif %}
