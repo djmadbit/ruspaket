@@ -109,7 +109,8 @@ TEMPLATES = [
 ]
 
 CONSTANCE_ADDITIONAL_FIELDS = {
-    'file_field': ['django.forms.FileField', {}]
+    'file_field': ['django.forms.FileField', {}],
+    'image_field': ['django.forms.ImageField', {}]
 }
 
 
@@ -128,6 +129,7 @@ CONSTANCE_CONFIG = {
 	'EMAIL_PORT': ('587', u'Порт'),
 	'EMAIL_SMTP': ('smtp.gmail.com', u'SMTP сервер'),
     'PRICE_LIST': ('price_list.csv', u'Ссылка на прайс лист', 'file_field',),
+    'BOSS_PHOTO': ('', u'Фото руководителя', 'image_field',),
 	
 }
 
