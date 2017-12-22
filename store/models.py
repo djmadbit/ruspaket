@@ -131,6 +131,7 @@ class Order(models.Model):
 	name=models.CharField(
 		verbose_name=u'ИМЯ',
 		max_length=1024,
+		blank=True,
 	)
 	phone=models.CharField(
 		verbose_name=u'Телефон',
