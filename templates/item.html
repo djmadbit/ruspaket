@@ -14,6 +14,15 @@
 	{% endif %}
 {% endblock header_text %}
 
+{% block meta %}    
+    {% if item.meta_description != '' %}
+        <meta name="description" content="{{item.meta_description}}" />
+    {% else %}
+        <meta name="description" content="{{item.title}}" />
+    {% endif %}
+    <meta name="keywords" content="{{item.meta_keywords}}" />
+{% endblock %}
+
 {% block order_desc %}Страница товара: {{item.title}}{% endblock order_desc %}
 
 {% block content %}

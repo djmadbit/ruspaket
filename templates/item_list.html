@@ -14,6 +14,14 @@
 	{% endif %}
 {% endblock header_text %}
 
+{% block meta %}
+    {% if category.meta_description != '' %}
+        <meta name="description" content="{{category.meta_description}}" />
+    {% else %}
+        <meta name="description" content="{{category.title}}" />
+    {% endif %}
+    <meta name="keywords" content="{{category.meta_keywords}}" />
+{% endblock %}
 
 {% block order_desc %}Страница категории: {{category.title}}{% endblock order_desc %}
 

@@ -46,6 +46,16 @@ class Category(models.Model):
 	image=models.ImageField(
 		verbose_name=u'Изображение',
 	)
+	meta_keywords=models.TextField(
+    	verbose_name=u'META keywords',
+    	blank=True,
+    	default='',
+	)
+	meta_description=models.TextField(
+    	verbose_name=u'META description',
+    	blank=True,
+    	default='',
+	)
 
 	def __str__(self):
 		return (self.title).encode('utf-8')
@@ -102,6 +112,16 @@ class Item(models.Model):
 	)
 	image=models.ImageField(
 		verbose_name=u'Изображение',
+	)
+	meta_keywords=models.TextField(
+    	verbose_name=u'META keywords',
+    	blank=True,
+    	default='',
+	)
+	meta_description=models.TextField(
+    	verbose_name=u'META description',
+    	blank=True,
+    	default='',
 	)
 
 	def __str__(self):

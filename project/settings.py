@@ -130,6 +130,9 @@ CONSTANCE_CONFIG = {
 	'EMAIL_SMTP': ('smtp.gmail.com', u'SMTP сервер'),
     'PRICE_LIST': ('price_list.csv', u'Ссылка на прайс лист', 'file_field',),
     'BOSS_PHOTO': ('', u'Фото руководителя', 'image_field',),
+    
+    'META_KEYWORDS': ('META keywords', u'руспакет.рф',),
+    'META_DESCRIPTION': ('META description', u'руспакет.рф',),
 	
 }
 

@@ -2,6 +2,11 @@
 
 {% load thumbnail %}
 
+{% block meta %}
+    <meta name="description" content="{{config.META_DESCRIPTION}}" />
+    <meta name="keywords" content="{{config.META_KEYWORDS}}" />
+{% endblock %}
+
 {% block content %}
 	<section id="products">
 		<div class="container">
