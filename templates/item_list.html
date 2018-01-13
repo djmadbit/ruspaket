@@ -36,14 +36,10 @@
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="top-block show-product">
 					<div class="h3">{{category.title}}</div>
-					{% if category.price_from or category.price_to %}
+					{% if category.price %}
 					    <p class="price">Цена: 
-    					    {% if category.price_from %}
-    					        от <span class="h2">{{category.price_from|floatformat:"-2"}}</span> 
-                            {% endif %}
-    					    {% if category.price_to %}                            
-                                до <span class="h2">{{category.price_to|floatformat:"-2"}}</span> руб.</p>
-                            {% endif %}
+    					    <span class="h2">{{category.price|floatformat:"-2"}}</span> 
+					    </p>
                     {% endif %}
 					{% if category.min_order and category.min_order != '' %}
 						<p>Минимальный заказ: {{category.min_order}}</p>
@@ -98,7 +94,7 @@
 						</div>
 						<div class="h3"><a href="{{item.get_absolute_url}}">{{item.title}}</a></div>
 						<p class="description">{{ item.short_about|safe }}</p>
-						<p class="price">Цена: от <span class="h2">{{item.price_from|floatformat:"-2"}}</span> до <span class="h2">{{item.price_to|floatformat:"-2"}}</span> руб.</p>
+						<p class="price">Цена: <span class="h2">{{item.price|floatformat:"-2"}}</span> руб.</p>
 					</div>
 				</div>
 			{% endfor %}

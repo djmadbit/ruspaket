@@ -3,11 +3,11 @@ from django.contrib import admin
 from .models import Category,Item,Order
 
 class CategoryAdmin(admin.ModelAdmin):
-	list_display=['title','price_from','price_to','min_count']
+	list_display=['title','price','min_count']
 	prepopulated_fields = {'utm': ('title',)}
 
 class ItemAdmin(admin.ModelAdmin):
-	list_display=['title','utm','price_from','price_to','min_count','category']
+	list_display=['title','utm','price','min_count','category']
 	prepopulated_fields = {'utm': ('title',)}
 
 class OrderAdmin(admin.ModelAdmin):

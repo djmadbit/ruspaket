@@ -15,14 +15,8 @@ class Category(models.Model):
 		max_length=255,
 		unique=True,
 	)
-	price_from=models.FloatField(
-		verbose_name=u'Цена от',
-		default=0,
-		blank=True,
-		null=True,
-	)
-	price_to=models.FloatField(
-		verbose_name=u'Цена до',
+	price=models.FloatField(
+		verbose_name=u'Цена',
 		default=0,
 		blank=True,
 		null=True,
@@ -78,14 +72,8 @@ class Item(models.Model):
 		max_length=255,
 		unique=True,
 	)
-	price_from=models.FloatField(
-		verbose_name=u'Цена от',
-		default=0,
-		blank=True,
-		null=True,
-	)
-	price_to=models.FloatField(
-		verbose_name=u'Цена до',
+	price=models.FloatField(
+		verbose_name=u'Цена',
 		default=0,
 		blank=True,
 		null=True,
