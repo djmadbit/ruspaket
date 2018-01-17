@@ -99,7 +99,7 @@
 			<div class="col-lg-8 col-md-8 col-sm-9 sidebar">
 				<div class="content">
 					<div class="span">Бесплатная доставка по Москве в день заказа</div>
-					<div class="h1">
+					<h1 class="h1">
 						{% block header_text %}
 							{% if config.HEADER_TEXT != '' %}
 								{{config.HEADER_TEXT}}
@@ -107,7 +107,7 @@
 								Главная
 							{% endif %}
 						{% endblock header_text %}
-					</div>
+					</h1>
 				</div>				
 			</div>
 		</div>
@@ -174,9 +174,14 @@
 				<div class="karta">
 					<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=hISAd5gOheDLBgSzXWtdibcE4UeRPhLv&width=100%&height=100%&lang=ru_RU&sourceType=constructor"></script>
 				</div>
+				<div class="top-block hidden-768">
+					<p>{{config.ADDRESS1}}</p>
+					<p>{{config.ADDRESS2}}</p>
+					<div class="h2">{{config.PHONE}}</div>
+				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="top-block">
+				<div class="top-block shown-768">
 					<p>{{config.ADDRESS1}}</p>
 					<p>{{config.ADDRESS2}}</p>
 					<div class="h2">{{config.PHONE}}</div>
