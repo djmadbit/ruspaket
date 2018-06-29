@@ -43,7 +43,7 @@
 					<input type="hidden" name="formname" value="Заказать звонок" />
 					<label class="name right required"><input type="text" name="name" class="input_name" placeholder="Введите ваше имя"></label><!-- у label класс "left" означает что текст ошибки появится слева (варианты left, top, right), класс required означает что поле обязательное -->
 					<label class="phone right required"><input type="text" name="phone" class="input_phone" placeholder="Введите ваш телефон"></label>
-					<input name="callback" type="button" class="button btn" value="Заказ обратного звонка"><!-- у всех кнопок отправки обязательный класс button, тип button, атрибут name должен быть такой-же как название целевой страницы для данной формы (name="callback" -> callback.php) целевая страница применяется в случае когда сообщениее о том что "заявка принята не в попапе, а на отдельной странице, всего таких страниц 3, они лежат в корне" -->
+					<input name="callback" type="button" class="button btn" value="Заказ обратного звонка" onclick="yaCounter48758201.reachGoal('zakaz-main'); return true;"><!-- у всех кнопок отправки обязательный класс button, тип button, атрибут name должен быть такой-же как название целевой страницы для данной формы (name="callback" -> callback.php) целевая страница применяется в случае когда сообщениее о том что "заявка принята не в попапе, а на отдельной странице, всего таких страниц 3, они лежат в корне" -->
 				</form>
 			</div>
 		</div>
@@ -204,6 +204,8 @@
 								<input type="text" name="phone" class="input_phone form-control">
 							</label>
 							<input name="callback" type="button" class="button btn" value="заказать звонок">
+							<input name="callback" type="button" class="button btn" value="заказать звонок" onclick="yaCounter48758201.reachGoal('zakaz-main'); return true;">
+
 						</form>
 					</div>
 					<div class="clear"></div>
